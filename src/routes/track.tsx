@@ -46,11 +46,11 @@ function TrackPage() {
       setMapError("Google Maps key not configured.");
       return;
     }
-    if (window.google?.maps) {
+    if ((window as any).google?.maps) {
       drawMap();
       return;
     }
-    window.initSussyMap = () => drawMap();
+    (window as any).initSussyMap = () => drawMap();
     const tracking = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID || "";
     const s = document.createElement("script");
     s.src = `https://maps.googleapis.com/maps/api/js?key=${key}&loading=async&callback=initSussyMap${tracking ? `&channel=${tracking}` : ""}`;
@@ -75,8 +75,8 @@ function TrackPage() {
   }, [mapReady]);
 
   function drawMap() {
-    if (!mapRef.current || !window.google?.maps) return;
-    const g = window.google.maps;
+    if (!mapRef.current || !(window as any).google?.maps) return;
+    const g = (window as any).google.maps;
     const map = new g.Map(mapRef.current, {
       center: { lat: (RESTAURANT.lat + CUSTOMER.lat) / 2, lng: (RESTAURANT.lng + CUSTOMER.lng) / 2 },
       zoom: 14,
