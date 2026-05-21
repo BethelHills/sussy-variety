@@ -28,7 +28,7 @@ const stages = [
   { key: "delivered", label: "Delivered", icon: MapPin },
 ] as const;
 
-type MapWindow = Window & { initSussyMap?: () => void; google?: any };
+
 
 function TrackPage() {
   const { order } = Route.useSearch();
