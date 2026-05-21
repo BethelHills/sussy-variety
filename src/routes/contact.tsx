@@ -39,7 +39,7 @@ function Contact() {
         <div className="rounded-2xl border border-border bg-card p-7">
           <MapPin className="h-7 w-7 text-primary" />
           <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Delivery</div>
-          <div className="mt-1 font-display text-xl font-bold">Asaba &amp; surrounding areas</div>
+          <div className="mt-1 font-display text-xl font-bold">Abia State, Umuahia</div>
           <p className="mt-2 text-sm text-muted-foreground">Live rider tracking on every order.</p>
         </div>
       </div>
