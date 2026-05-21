@@ -65,6 +65,9 @@ export const menu: MenuItem[] = [
   { id: "grill-gz-1", category: "Grills for Odogwu", name: "Gizzard Grill — Size 1 Plate", price: 10000 },
   { id: "grill-gz-2", category: "Grills for Odogwu", name: "Gizzard Grill — Size 2 Plate", price: 20000 },
   { id: "grill-gz-3", category: "Grills for Odogwu", name: "Gizzard Grill — Size 3 Plate", price: 30000 },
+
+  // Drinks
+  { id: "palm-wine", category: "Drinks", name: "Fresh Palm Wine", price: 2500, description: "Freshly tapped palm wine — bottled and chilled. Feed the body that works the money." },
 ];
 
 export const categories = Array.from(new Set(menu.map((m) => m.category)));
