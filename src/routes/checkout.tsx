@@ -3,6 +3,7 @@ import { CreditCard, Lock, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { formatNaira } from "@/lib/menu";
+import { supabase } from "@/lib/supabase";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
