@@ -90,6 +90,7 @@ function CheckoutPage() {
                   onChange={(e) => setDeliveryDetails({ ...deliveryDetails, name: e.target.value })}
                 />
               </Field>
+
               <Field label="Phone" required>
                 <input
                   required
@@ -99,16 +100,17 @@ function CheckoutPage() {
                   onChange={(e) => setDeliveryDetails({ ...deliveryDetails, phone: e.target.value })}
                 />
               </Field>
-              <Field label="Email" required className="sm:col-span-2">
+
+              <Field label="Email">
                 <input
-                  required
                   type="email"
                   className="input"
-                  placeholder="jane@example.com"
+                  placeholder="customer@email.com"
                   value={deliveryDetails.email}
                   onChange={(e) => setDeliveryDetails({ ...deliveryDetails, email: e.target.value })}
                 />
               </Field>
+
               <Field label="Address" required className="sm:col-span-2">
                 <input
                   required
@@ -118,6 +120,7 @@ function CheckoutPage() {
                   onChange={(e) => setDeliveryDetails({ ...deliveryDetails, address: e.target.value })}
                 />
               </Field>
+
               <Field label="City" required>
                 <input
                   required
@@ -127,6 +130,7 @@ function CheckoutPage() {
                   onChange={(e) => setDeliveryDetails({ ...deliveryDetails, city: e.target.value })}
                 />
               </Field>
+
               <Field label="Landmark">
                 <input
                   className="input"
