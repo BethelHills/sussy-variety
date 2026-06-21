@@ -41,7 +41,7 @@ function TrackPage() {
 
   // Load Google Maps once
   useEffect(() => {
-    const key = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY;
+    const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
     if (!key) {
       setMapError("Google Maps key not configured.");
       return;
@@ -51,7 +51,7 @@ function TrackPage() {
       return;
     }
     (window as any).initSussyMap = () => drawMap();
-    const tracking = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID || "";
+    const tracking = import.meta.env.VITE_GOOGLE_MAPS_TRACKING_ID || "";
     const s = document.createElement("script");
     s.src = `https://maps.googleapis.com/maps/api/js?key=${key}&loading=async&callback=initSussyMap${tracking ? `&channel=${tracking}` : ""}`;
     s.async = true;
