@@ -19,6 +19,14 @@ function CheckoutPage() {
   const delivery = subtotal > 0 ? 1500 : 0;
   const total = subtotal + delivery;
 
+  const [deliveryDetails, setDeliveryDetails] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+    city: "",
+    landmark: "",
+  });
   const [card, setCard] = useState({ number: "", name: "", exp: "", cvc: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -42,11 +50,60 @@ function CheckoutPage() {
         <div className="space-y-8">
           <Card title="Delivery details">
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Full name" required><input required className="input" placeholder="Jane Doe" /></Field>
-              <Field label="Phone" required><input required className="input" placeholder="0801 234 5678" /></Field>
-              <Field label="Address" required className="sm:col-span-2"><input required className="input" placeholder="House 12, Sample Street" /></Field>
-              <Field label="City" required><input required className="input" placeholder="Asaba" /></Field>
-              <Field label="Landmark"><input className="input" placeholder="Near the junction" /></Field>
+              <Field label="Full name" required>
+                <input
+                  required
+                  className="input"
+                  placeholder="Jane Doe"
+                  value={deliveryDetails.name}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, name: e.target.value })}
+                />
+              </Field>
+              <Field label="Phone" required>
+                <input
+                  required
+                  className="input"
+                  placeholder="0801 234 5678"
+                  value={deliveryDetails.phone}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, phone: e.target.value })}
+                />
+              </Field>
+              <Field label="Email" required className="sm:col-span-2">
+                <input
+                  required
+                  type="email"
+                  className="input"
+                  placeholder="jane@example.com"
+                  value={deliveryDetails.email}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, email: e.target.value })}
+                />
+              </Field>
+              <Field label="Address" required className="sm:col-span-2">
+                <input
+                  required
+                  className="input"
+                  placeholder="House 12, Sample Street"
+                  value={deliveryDetails.address}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, address: e.target.value })}
+                />
+              </Field>
+              <Field label="City" required>
+                <input
+                  required
+                  className="input"
+                  placeholder="Asaba"
+                  value={deliveryDetails.city}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, city: e.target.value })}
+                />
+              </Field>
+              <Field label="Landmark">
+                <input
+                  className="input"
+                  placeholder="Near the junction"
+                  value={deliveryDetails.landmark}
+                  onChange={(e) => setDeliveryDetails({ ...deliveryDetails, landmark: e.target.value })}
+                />
+              </Field>
             </div>
           </Card>
 
