@@ -11,13 +11,12 @@ export const formatNaira = (n: number) =>
 
 export const menu: MenuItem[] = [
   // Peppered Snails - Medium
-  { id: "snail-m-10", category: "Peppered Snails", name: "Peppered Snail (Medium) — 10 pcs", price: 7000 },
-  { id: "snail-m-15", category: "Peppered Snails", name: "Peppered Snail (Medium) — 15 pcs", price: 10500 },
-  { id: "snail-m-20", category: "Peppered Snails", name: "Peppered Snail (Medium) — 20 pcs", price: 14000 },
-  { id: "snail-m-25", category: "Peppered Snails", name: "Peppered Snail (Medium) — 25 pcs", price: 17500 },
-  { id: "snail-m-30", category: "Peppered Snails", name: "Peppered Snail (Medium) — 30 pcs", price: 21000 },
-  { id: "snail-m-40", category: "Peppered Snails", name: "Peppered Snail (Medium) — 40 pcs", price: 28000 },
-  { id: "snail-m-50", category: "Peppered Snails", name: "Peppered Snail (Medium) — 50 pcs", price: 35000 },
+  { id: "snail-m-10", category: "Peppered Snails", name: "Peppered Snail (Medium) — 10 pcs", price: 8000 },
+  { id: "snail-m-15", category: "Peppered Snails", name: "Peppered Snail (Medium) — 15 pcs", price: 12000 },
+  { id: "snail-m-20", category: "Peppered Snails", name: "Peppered Snail (Medium) — 20 pcs", price: 16000 },
+  { id: "snail-m-25", category: "Peppered Snails", name: "Peppered Snail (Medium) — 25 pcs", price: 20000 },
+  { id: "snail-m-30", category: "Peppered Snails", name: "Peppered Snail (Medium) — 30 pcs", price: 24000 },
+  { id: "snail-m-50", category: "Peppered Snails", name: "Peppered Snail (Medium) — 50 pcs", price: 40000 },
   // Odogwu
   { id: "snail-o-10", category: "Peppered Snails", name: "Peppered Snail (Odogwu) — 10 pcs", price: 9000 },
   { id: "snail-o-15", category: "Peppered Snails", name: "Peppered Snail (Odogwu) — 15 pcs", price: 13500 },
