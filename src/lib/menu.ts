@@ -28,10 +28,10 @@ export const menu: MenuItem[] = [
   { id: "snail-o-50", category: "Peppered Snails", name: "Peppered Snail (Odogwu) — 50 pcs", price: 45000 },
 
   // Parfait
-  { id: "parfait-sm", category: "Fresh Fruit Parfait", name: "Small Cup", price: 3000 },
-  { id: "parfait-bg", category: "Fresh Fruit Parfait", name: "Big Cup", price: 4000 },
-  { id: "parfait-md", category: "Fresh Fruit Parfait", name: "Medium Plate", price: 5000 },
-  { id: "parfait-jb", category: "Fresh Fruit Parfait", name: "Jumbo Plate", price: 6000 },
+  { id: "parfait-sm", category: "Fresh Fruit Parfait", name: "Small Cup", price: 3500 },
+  { id: "parfait-bg", category: "Fresh Fruit Parfait", name: "Big Cup", price: 5000 },
+  { id: "parfait-md", category: "Fresh Fruit Parfait", name: "Medium Plate", price: 7000 },
+  { id: "parfait-jb", category: "Fresh Fruit Parfait", name: "Jumbo Plate", price: 9000 },
 
   // Peanuts
   { id: "peanut-25", category: "Peanuts", name: "Peanuts — 25cl", price: 1500 },
