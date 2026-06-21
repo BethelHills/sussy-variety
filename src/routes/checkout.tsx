@@ -28,14 +28,46 @@ function CheckoutPage() {
     landmark: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (lines.length === 0) return;
+
     setSubmitting(true);
+
     const orderId = "SV-" + Math.random().toString(36).slice(2, 8).toUpperCase();
-    setTimeout(() => {
-      clear();
-      navigate({ to: "/track", search: { order: orderId } });
-    }, 1100);
+
+    const orderItems = lines.map((line) => ({
+      id: line.item.id,
+      name: line.item.name,
+      price: line.item.price,
+      quantity: line.qty,
+      total: line.item.price * line.qty,
+    }));
+
+    const { error } = await supabase.from("orders").insert({
+      customer_name: deliveryDetails.name,
+      customer_phone: deliveryDetails.phone,
+      customer_email: deliveryDetails.email,
+      delivery_address: `${deliveryDetails.address}, ${deliveryDetails.city}${
+        deliveryDetails.landmark ? `, ${deliveryDetails.landmark}` : ""
+      }`,
+      items: orderItems,
+      total_amount: total,
+      payment_reference: orderId,
+      payment_status: "pending",
+      order_status: "pending",
+    });
+
+    if (error) {
+      console.error("Order save error:", error);
+      alert("Could not save order. Please try again.");
+      setSubmitting(false);
+      return;
+    }
+
+    clear();
+    navigate({ to: "/track", search: { order: orderId } });
   };
 
   return (
