@@ -27,7 +27,6 @@ function CheckoutPage() {
     city: "",
     landmark: "",
   });
-  const [card, setCard] = useState({ number: "", name: "", exp: "", cvc: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,8 +115,6 @@ function CheckoutPage() {
                 <input
                   required
                   inputMode="numeric"
-                  value={card.number}
-                  onChange={(e) => setCard({ ...card, number: formatCardNumber(e.target.value) })}
                   placeholder="1234 5678 9012 3456"
                   className="input font-mono tracking-wider"
                   maxLength={19}
@@ -126,8 +123,6 @@ function CheckoutPage() {
               <Field label="Name on card" required>
                 <input
                   required
-                  value={card.name}
-                  onChange={(e) => setCard({ ...card, name: e.target.value })}
                   className="input"
                   placeholder="JANE DOE"
                 />
@@ -136,8 +131,6 @@ function CheckoutPage() {
                 <Field label="Expiry" required>
                   <input
                     required
-                    value={card.exp}
-                    onChange={(e) => setCard({ ...card, exp: formatExp(e.target.value) })}
                     placeholder="MM / YY"
                     className="input"
                     maxLength={7}
@@ -146,8 +139,6 @@ function CheckoutPage() {
                 <Field label="CVC" required>
                   <input
                     required
-                    value={card.cvc}
-                    onChange={(e) => setCard({ ...card, cvc: e.target.value.replace(/\D/g, "").slice(0, 4) })}
                     placeholder="123"
                     className="input"
                   />
@@ -222,11 +213,3 @@ function Row({ k, v, bold }: { k: string; v: string; bold?: boolean }) {
   );
 }
 
-function formatCardNumber(v: string) {
-  return v.replace(/\D/g, "").slice(0, 16).replace(/(.{4})/g, "$1 ").trim();
-}
-function formatExp(v: string) {
-  const d = v.replace(/\D/g, "").slice(0, 4);
-  if (d.length < 3) return d;
-  return d.slice(0, 2) + " / " + d.slice(2);
-}
