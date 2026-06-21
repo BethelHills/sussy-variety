@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { CreditCard, Lock, ShieldCheck } from "lucide-react";
+import { Lock } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { formatNaira } from "@/lib/menu";
@@ -143,46 +143,8 @@ function CheckoutPage() {
           </Card>
 
           <Card title="Payment">
-            <div className="mb-4 flex items-center gap-2 rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground w-fit">
-              <CreditCard className="h-3.5 w-3.5" /> Debit / Credit card
-            </div>
-            <div className="grid gap-4">
-              <Field label="Card number" required>
-                <input
-                  required
-                  inputMode="numeric"
-                  placeholder="1234 5678 9012 3456"
-                  className="input font-mono tracking-wider"
-                  maxLength={19}
-                />
-              </Field>
-              <Field label="Name on card" required>
-                <input
-                  required
-                  className="input"
-                  placeholder="JANE DOE"
-                />
-              </Field>
-              <div className="grid grid-cols-2 gap-4">
-                <Field label="Expiry" required>
-                  <input
-                    required
-                    placeholder="MM / YY"
-                    className="input"
-                    maxLength={7}
-                  />
-                </Field>
-                <Field label="CVC" required>
-                  <input
-                    required
-                    placeholder="123"
-                    className="input"
-                  />
-                </Field>
-              </div>
-            </div>
-            <p className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Demo checkout — no real charge is made. Live Stripe processing can be enabled on request.
+            <p className="text-sm text-muted-foreground">
+              You will be redirected to Paystack to complete your payment securely.
             </p>
           </Card>
         </div>
